@@ -28,9 +28,18 @@ form.addEventListener('submit', e => {
 
     const isFormValid = form.checkValidity()
     if(isFormValid){
-        console.log()
+        console.log(isFormValid);
+        const body = {
+            firstname: firstname.value,
+            lastname: lastname.value,
+            email: email.value,
+            quantity: Number(quantity.value),
+            userCondition: true,
+            nextEvent: nextEvent.checked,
+            location: document.querySelector('input[type="radio"]:checked').value
+        }
+        console.log(body);
     }
-    console.log(isFormValid)
 });
 
 const checkFirstname = () => {
@@ -70,7 +79,7 @@ const checkDate = () => {
 birthdate.addEventListener('change', checkDate);
 
 const checkQuantity = () => {
-    const quantityValue = quantity.parseInt(Number);
+    const quantityValue = parseInt(quantity.value, 10);
     quantity.setCustomValidity("")
     if (quantityValue < 0 || quantityValue > 100) {
         quantity.setCustomValidity("Saisissez une quantité entre 0 et 100")
