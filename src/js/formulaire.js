@@ -68,3 +68,13 @@ const checkDate = () => {
     birthdate.reportValidity()
 };
 birthdate.addEventListener('change', checkDate);
+
+const checkQuantity = () => {
+    const quantityValue = quantity.parseInt(Number);
+    quantity.setCustomValidity("")
+    if (quantityValue < 0 || quantityValue > 100) {
+        quantity.setCustomValidity("Saisissez une quantité entre 0 et 100")
+    }
+    quantity.reportValidity()
+};
+quantity.addEventListener('change', checkQuantity);
