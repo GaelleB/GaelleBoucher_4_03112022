@@ -25,6 +25,11 @@ form.addEventListener('submit', e => {
     checkLastname()
     checkEmail()
     checkDate()
+    checkQuantity()
+    // checkLocation()
+    checkUserConditions()
+    checkNextEvent()
+    // validate()
 
     const isFormValid = form.checkValidity()
     if(isFormValid){
@@ -34,9 +39,9 @@ form.addEventListener('submit', e => {
             lastname: lastname.value,
             email: email.value,
             quantity: Number(quantity.value),
+            location: document.querySelector('input[type="radio"]:checked').value,
             userCondition: true,
-            nextEvent: nextEvent.checked,
-            location: document.querySelector('input[type="radio"]:checked').value
+            nextEvent: nextEvent.checked
         }
         console.log(body);
     }
@@ -87,3 +92,29 @@ const checkQuantity = () => {
     quantity.reportValidity()
 };
 quantity.addEventListener('change', checkQuantity);
+
+// const checkLocation = () => {
+//     const locationValue = 'input[type="radio"]:checked';
+//     location.setCustomValidity("")
+//     if (locationValue.checked === false) {
+//         location.setCustomValidity("Veuillez cocher une case")
+//     }
+//     location.reportValidity()
+// };
+// location.addEventListener('change', checkLocation);
+
+function checkUserConditions(){
+    if(userCondition === false){
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function checkNextEvent(){
+    if(nextEvent.checked === true){
+        return true;
+    } else {
+        return false;
+    }
+}
