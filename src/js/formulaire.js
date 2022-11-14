@@ -29,6 +29,7 @@ form.addEventListener('submit', e => {
     // checkLocation()
     checkUserConditions()
     checkNextEvent()
+
     // validate()
 
     const isFormValid = form.checkValidity()
@@ -103,18 +104,24 @@ quantity.addEventListener('change', checkQuantity);
 // };
 // location.addEventListener('change', checkLocation);
 
-function checkUserConditions(){
+const checkUserConditions = () => {
     if(userCondition === false){
         return false;
     } else {
         return true;
     }
-}
+};
+userCondition.addEventListener('change', checkUserConditions);
 
-function checkNextEvent(){
+const checkNextEvent = () => {
     if(nextEvent.checked === true){
         return true;
     } else {
         return false;
     }
-}
+};
+nextEvent.addEventListener('change', checkNextEvent);
+
+const validate = () => {
+
+};
