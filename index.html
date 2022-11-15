@@ -57,7 +57,7 @@
           <div class="modal-body">
             <form id="form" novalidate>
               <div
-                class="formData">
+                class="formData" data-error="Veuillez entrer 2 caractères ou plus dans le champ du prénom">
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
@@ -68,7 +68,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData" data-error="Veuillez entrer 2 caractères ou plus dans le champ du nom">
                 <label>Nom</label><br>
                 <input
                   class="text-control"
@@ -79,7 +79,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData" data-error="Veuillez entrer une adresse mail valide">
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
@@ -90,7 +90,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData" data-error="Veuillez entrer votre date de naissance.">
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -101,13 +101,13 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData" data-error="Veuillez entrer une quantité entre 0 et 100">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formDataLocation">
+                class="formDataLocation" data-error="Vous devez choisir une option">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -183,7 +183,7 @@
               </div>
 
               <div
-                class="formData">
+                class="formData" data-error="Vous devez vérifier que vous acceptez les termes et conditions.">
                 <input
                   class="checkbox-input"
                   type="checkbox"
