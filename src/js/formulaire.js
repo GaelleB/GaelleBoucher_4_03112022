@@ -4,7 +4,7 @@ const firstname = document.getElementById('first');
 const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
-const quantity = document.getElementById('quantity');
+const quantityTournoi = document.getElementById('quantity');
 const location1 = document.getElementById('location1');
 const location2 = document.getElementById('location2');
 const location3 = document.getElementById('location3');
@@ -25,11 +25,10 @@ form.addEventListener('submit', e => {
     checkLastname()
     checkEmail()
     checkDate()
-    checkQuantity()
+    checkQuantityTournoi()
     // checkLocation()
     checkUserConditions()
     checkNextEvent()
-
     // validate()
 
     const isFormValid = form.checkValidity()
@@ -39,7 +38,7 @@ form.addEventListener('submit', e => {
             firstname: firstname.value,
             lastname: lastname.value,
             email: email.value,
-            quantity: Number(quantity.value),
+            quantityTournoi: Number(quantityTournoi.value),
             location: document.querySelector('input[type="radio"]:checked').value,
             userCondition: true,
             nextEvent: nextEvent.checked
@@ -84,15 +83,15 @@ const checkDate = () => {
 };
 birthdate.addEventListener('change', checkDate);
 
-const checkQuantity = () => {
-    const quantityValue = parseInt(quantity.value, 10);
-    quantity.setCustomValidity("")
+const checkQuantityTournoi = () => {
+    const quantityValue = parseInt(quantityTournoi.value, 10);
+    quantityTournoi.setCustomValidity("")
     if (quantityValue < 0 || quantityValue > 100) {
-        quantity.setCustomValidity("Saisissez une quantité entre 0 et 100")
+        quantityTournoi.setCustomValidity("Saisissez une quantité entre 0 et 100")
     }
-    quantity.reportValidity()
+    quantityTournoi.reportValidity()
 };
-quantity.addEventListener('change', checkQuantity);
+quantityTournoi.addEventListener('change', checkQuantityTournoi);
 
 // const checkLocation = () => {
 //     const locationValue = 'input[type="radio"]:checked';
@@ -122,6 +121,6 @@ const checkNextEvent = () => {
 };
 nextEvent.addEventListener('change', checkNextEvent);
 
-const validate = () => {
-
-};
+// const validate = () => {
+    
+// };
