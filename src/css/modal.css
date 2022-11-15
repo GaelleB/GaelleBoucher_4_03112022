@@ -98,7 +98,9 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+
+    /* Suppression du margin-top pour aligner la nav en mobile */
+    /* margin-top: -15px; */
   }
 } 
 
