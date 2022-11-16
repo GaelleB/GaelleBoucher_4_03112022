@@ -5,12 +5,8 @@ const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const quantityTournoi = document.getElementById('quantity');
-const location1 = document.getElementById('location1');
-const location2 = document.getElementById('location2');
-const location3 = document.getElementById('location3');
-const location4 = document.getElementById('location4');
-const location5 = document.getElementById('location5');
-const location6 = document.getElementById('location6');
+const formDataLocation = document.querySelector('.formDataLocation')
+const locationInput = document.querySelector('input[type="radio"]:checked')
 const userCondition = document.getElementById('checkbox1');
 const nextEvent = document.getElementById('checkbox2');
 
@@ -26,7 +22,7 @@ form.addEventListener('submit', e => {
     checkEmail()
     checkDate()
     checkQuantityTournoi()
-    // checkLocation()
+    checkLocation()
     checkUserConditions()
     checkNextEvent()
     // validate()
@@ -93,15 +89,15 @@ const checkQuantityTournoi = () => {
 };
 quantityTournoi.addEventListener('change', checkQuantityTournoi);
 
-// const checkLocation = () => {
-//     const locationValue = 'input[type="radio"]:checked';
-//     location.setCustomValidity("")
-//     if (locationValue.checked === false) {
-//         location.setCustomValidity("Veuillez cocher une case")
-//     }
-//     location.reportValidity()
-// };
-// location.addEventListener('change', checkLocation);
+const checkLocation = () => {
+    const locationValue = 'input[type="radio"]:checked';
+    formDataLocation.setCustomValidity("")
+    if (locationValue.checked === false) {
+        formDataLocation.setCustomValidity("Veuillez cocher une case")
+    }
+    formDataLocation.reportValidity()
+};
+formDataLocation.addEventListener('change', checkLocation);
 
 const checkUserConditions = () => {
     if(userCondition === false){
@@ -121,6 +117,6 @@ const checkNextEvent = () => {
 };
 nextEvent.addEventListener('change', checkNextEvent);
 
-// const validate = () => {
+const validate = () => {
     
-// };
+};
