@@ -5,8 +5,7 @@ const lastname = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const quantityTournoi = document.getElementById('quantity');
-const formDataLocation = document.querySelector('.formDataLocation')
-const locationInput = document.querySelector('input[type="radio"]:checked')
+const locationInput = document.querySelector('input[type="radio"]')
 const userCondition = document.getElementById('checkbox1');
 const nextEvent = document.getElementById('checkbox2');
 
@@ -90,14 +89,13 @@ const checkQuantityTournoi = () => {
 quantityTournoi.addEventListener('change', checkQuantityTournoi);
 
 const checkLocation = () => {
-    const locationValue = 'input[type="radio"]:checked';
-    formDataLocation.setCustomValidity("")
-    if (locationValue.checked === false) {
-        formDataLocation.setCustomValidity("Veuillez cocher une case")
+    locationInput.setCustomValidity("")
+    if (locationInput.checked === false) {
+        locationInput.setCustomValidity("Veuillez cocher une case")
     }
-    formDataLocation.reportValidity()
+    locationInput.reportValidity()
 };
-formDataLocation.addEventListener('change', checkLocation);
+locationInput.addEventListener('change', checkLocation);
 
 const checkUserConditions = () => {
     if(userCondition === false){
@@ -118,5 +116,9 @@ const checkNextEvent = () => {
 nextEvent.addEventListener('change', checkNextEvent);
 
 const validate = () => {
-    
+    if (condition) {
+        
+    } else {
+        
+    }
 };
