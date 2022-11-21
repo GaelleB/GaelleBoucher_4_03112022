@@ -2,19 +2,26 @@
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const closeBtn = document.querySelector(".close");
+const modalConfirmation = document.querySelector('.modal-confirmation')
+const buttonSuccess = document.querySelector(".button-success");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // Close modal event
 closeBtn.addEventListener("click", closeModal);
+modalConfirmation.addEventListener("click", closeModal);
+
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  modalConfirmation.style.display = "none";
+  buttonSuccess.style.display = "none";
 }
 
 function closeModal() {
   modalbg.style.display = "none";
+  modalConfirmation.style.display = "block";
   form.reset();
 }

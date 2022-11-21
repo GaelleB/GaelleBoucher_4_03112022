@@ -14,7 +14,7 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="./assets/images/Logo.png" width="auto" height="auto" />
+      <img alt="Logo GameOn" src="./assets/images/Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
       <a href="#" class="active"><span>Accueil</span></a>
@@ -104,11 +104,19 @@
                 class="formData"
                 data-error="Veuillez entrer une quantité entre 0 et 100">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input 
+                type="number" 
+                class="text-control" 
+                id="quantity" 
+                name="quantity" 
+                min="0" 
+                max="100"
+                value="0">
+                
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formDataLocation"
+                class="formData"
                 data-error="Vous devez choisir une option">
                 <input
                   class="checkbox-input"
@@ -185,7 +193,6 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  required
                 />
                 <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
@@ -206,6 +213,11 @@
                 value="C'est parti"
               />
             </form>
+            <!-- Modal confirmation -->
+            <div class="modal-confirmation">
+              <h2 >Merci pour votre inscription</h2>
+            </div>
+            <button class="button-success">Fermer</button>
           </div>
         </div>
       </div>
