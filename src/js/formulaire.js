@@ -144,6 +144,13 @@ const validate = () => {
         };
         console.log(body);
 
+        launchConfirmationModal()
         // code pour afficher le message de confirmation
     }
+};
+
+const launchConfirmationModal = () => {
+	modalConfirmation.style.display = "block";
+    modalbg.style.display = "none"
+	console.log('envoi serveur');
 };

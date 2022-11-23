@@ -560,3 +560,13 @@ footer {
     opacity: 1;
   }
 }
+
+.modal-confirmation {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
