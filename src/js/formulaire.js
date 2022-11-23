@@ -12,6 +12,7 @@ const nextEvent = document.getElementById('checkbox2');
 // Regex
 const regexText = /^[a-zA-Z-\s]{2,}$/;
 const regexEmail = /^([a-zA-Z0-9.-_]+)@((?:[a-zA-Z0-9.-_]+.)+)([a-zA-Z]{2,4})/;
+// const regexDate =  /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -143,14 +144,11 @@ const validate = () => {
             nextEvent: nextEvent.checked
         };
         console.log(body);
-
         launchConfirmationModal()
-        // code pour afficher le message de confirmation
     }
 };
 
 const launchConfirmationModal = () => {
 	modalConfirmation.style.display = "block";
-    modalbg.style.display = "none"
 	console.log('envoi serveur');
 };
