@@ -111,9 +111,6 @@ main {
   font-size: 130%;
   font-weight: bolder;
   color: black;
-  padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
@@ -524,7 +521,7 @@ footer {
     width: 100%;
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 5px;
   }
   .hero-content::after {
     content: unset;
@@ -537,6 +534,7 @@ footer {
     white-space: normal;
   }
   .hero-text {
+    margin: 0;
     width: 100%;
     font-size: 1.5rem;
   }
@@ -579,11 +577,12 @@ footer {
 }
 
 h2 {
-  word-spacing: 0px;
   width: 53%;
   font-weight: 100;
-  margin-top: 80%;
-  margin-left: 20%;
+  margin-top: 350px;
+  margin-left: 120px;
+  justify-content: center;
+  text-align: center;
 }
 
 .button-success {
