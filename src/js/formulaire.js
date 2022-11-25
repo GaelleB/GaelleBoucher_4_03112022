@@ -12,7 +12,7 @@ const nextEvent = document.getElementById('checkbox2');
 // Regex
 const regexText = /^[a-zA-Z-\s]{2,}$/;
 const regexEmail = /^([a-zA-Z0-9.-_]+)@((?:[a-zA-Z0-9.-_]+.)+)([a-zA-Z]{2,4})/;
-// const regexDate =  /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+const regexDate =  /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -80,8 +80,12 @@ const checkEmail = () => {
 email.addEventListener('change', checkEmail);
 
 const checkDate = () => {
+    const birthdateValue = birthdate.value.trim();
     birthdate.setCustomValidity("");
-    birthdate.reportValidity();
+    if (regexDate.test(birthdateValue) === false) {
+        birthdate.setCustomValidity("Veuillez entrer une date");
+    }
+    handleAttributes(birthdate);
 };
 birthdate.addEventListener('change', checkDate);
 
@@ -150,5 +154,5 @@ const validate = () => {
 
 const launchConfirmationModal = () => {
 	modalConfirmation.style.display = "block";
-	console.log('envoi serveur');
+	console.log('Formulaire envoyé');
 };

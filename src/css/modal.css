@@ -35,7 +35,7 @@ img {
 
 .topnav {
   overflow: hidden;
-  margin: 3.5%;
+  margin: 3.2%;
 }
 
 .header-logo {
@@ -513,6 +513,9 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+  .bground {
+    padding-top: 120px;
+  }
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -586,6 +589,7 @@ h2 {
 }
 
 .button-success {
+  font-size: 16px;
   position: absolute;
   bottom: 30px;
   left: 50%;
