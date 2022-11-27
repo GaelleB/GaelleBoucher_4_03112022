@@ -12,23 +12,23 @@ const nextEvent = document.getElementById('checkbox2');
 // Regex
 const regexText = /^[a-zA-Z-\s]{2,}$/;
 const regexEmail = /^([a-zA-Z0-9.-_]+)@((?:[a-zA-Z0-9.-_]+.)+)([a-zA-Z]{2,4})/;
-const regexDate = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+const regexDate = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
 
-// Ecoute du formulaire de soumission
+// Vérification de la validité des inputs lors de la soumission du formulaire
 form.addEventListener('submit', e => {
     e.preventDefault();
 
     checkFirstname();
     checkLastname();
     checkEmail();
-    // checkDate();
+    checkDate();
     checkQuantityTournoi();
     checkLocation();
     checkUserConditions();
     validate();
 });
 
-// Fonction gestion des attributs data-error
+// Gestion des attributs pour afficher ou non une erreur sur le champs en question
 const handleAttributes = (input) => {
     const inputParent = input.parentElement;
     const isInputValid = input.checkValidity();
@@ -39,7 +39,7 @@ const handleAttributes = (input) => {
     }
 };
 
-// Fonction gestion des attributs data-error des boutons radio
+// Gestion des attributs data-error des boutons radio
 const handleAttributesRadio = (inputs) => {
     inputs.forEach(input => {
         const inputParent = input.parentElement;
@@ -51,6 +51,12 @@ const handleAttributesRadio = (inputs) => {
         }
     });
 };
+
+/** 
+- On retire les espaces au début et à la fin de la saisie
+- On vérifie la validité de la saisie via la regex
+- On affiche ou non un message d'erreur
+*/
 
 //  Fonction prénom
 const checkFirstname = () => {
@@ -85,16 +91,16 @@ const checkEmail = () => {
 };
 email.addEventListener('change', checkEmail);
 
-//  Fonction date de naissance
-// const checkDate = () => {
-//     const birthdateValue = birthdate.value;
-//     birthdate.setCustomValidity("");
-//     if (regexDate.test(birthdateValue) === false) {
-//         birthdate.setCustomValidity("Veuillez entrer une date");
-//     }
-//     handleAttributes(birthdate);
-// };
-// birthdate.addEventListener('change', checkDate);
+// Fonction date de naissance
+const checkDate = () => {
+    const birthdateValue = birthdate.value;
+    birthdate.setCustomValidity("");
+    if (regexDate.test(birthdateValue) === false) {
+        birthdate.setCustomValidity("Veuillez entrer une date");
+    }
+    handleAttributes(birthdate);
+};
+birthdate.addEventListener('change', checkDate);
 
 //  Fonction quantité des tournois
 const checkQuantityTournoi = () => {
@@ -150,6 +156,7 @@ const validate = () => {
     const isFormValid = form.checkValidity();
     if (isFormValid) {
         console.log(isFormValid);
+        // Objet avec la valeur des inputs
         const body = {
             firstname: firstname.value,
             lastname: lastname.value,
