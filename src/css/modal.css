@@ -35,11 +35,12 @@ img {
 
 .topnav {
   overflow: hidden;
-  margin: 3.2%;
+  margin: 2%;
 }
 
 .header-logo {
     float: left;
+    margin-left: 20px;
 }
 
 .main-navbar {
